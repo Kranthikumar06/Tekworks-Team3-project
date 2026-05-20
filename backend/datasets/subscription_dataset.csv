@@ -1,0 +1,121 @@
+customer_id,age,country,subscription_type,monthly_fee,tenure_months,last_login_days,avg_monthly_usage_hours,support_tickets_last_6m,auto_renew_enabled,payment_method,cancelled
+CUST0001,22,Oman,Standard,14.99,10,40,34.66,6,1,PayPal,1
+CUST0002,67,Mexico,Premium,5.99,29,51,27.87,3,0,Credit Card,0
+CUST0003,32,Jersey,Premium,29.99,26,54,28.49,3,0,Credit Card,1
+CUST0004,48,Ethiopia,Basic,14.99,19,35,57.77,4,1,Debit Card,1
+CUST0005,35,Netherlands,Basic,14.99,12,8,99.9,1,1,PayPal,1
+CUST0006,49,Vietnam,Standard,29.99,25,41,84.25,7,0,Debit Card,0
+CUST0007,29,Cote d'Ivoire,Basic,5.99,20,50,12.18,9,0,Credit Card,0
+CUST0008,60,Somalia,Premium,14.99,14,60,51.29,2,0,Credit Card,0
+CUST0009,57,Jordan,Basic,9.99,16,28,54.46,2,1,Debit Card,0
+CUST0010,70,Benin,Basic,14.99,24,35,92.05,8,0,Credit Card,1
+CUST0011,57,Marshall Islands,Basic,5.99,0,11,54.87,7,0,Debit Card,1
+CUST0012,64,Puerto Rico,Standard,9.99,13,17,78.56,6,0,PayPal,1
+CUST0013,59,Turkmenistan,Basic,29.99,20,1,38.28,9,1,PayPal,0
+CUST0014,38,Australia,Standard,29.99,19,6,22.46,10,0,Debit Card,0
+CUST0015,36,Singapore,Premium,14.99,26,58,33.47,7,0,Credit Card,0
+CUST0016,57,Antarctica (the territory South of 60 deg S),Standard,14.99,5,30,76.24,1,1,PayPal,0
+CUST0017,56,Portugal,Standard,14.99,28,25,40.76,7,1,Debit Card,0
+CUST0018,19,Australia,Standard,9.99,25,53,13.72,4,1,PayPal,0
+CUST0019,49,Nepal,Premium,5.99,0,15,98.94,6,1,Debit Card,1
+CUST0020,48,Saudi Arabia,Standard,19.99,4,50,99.99,5,1,Debit Card,0
+CUST0021,52,Mayotte,Standard,14.99,15,11,74.65,3,0,Credit Card,0
+CUST0022,21,Cayman Islands,Standard,14.99,23,13,78.4,5,0,Debit Card,0
+CUST0023,41,Saint Martin,Basic,5.99,26,50,81.01,9,1,PayPal,0
+CUST0024,19,Uruguay,Premium,9.99,3,59,11.36,5,1,PayPal,1
+CUST0025,53,Mauritania,Premium,9.99,22,41,97.4,7,0,Credit Card,0
+CUST0026,19,Tajikistan,Premium,29.99,3,40,17.06,8,0,Credit Card,0
+CUST0027,64,Niger,Basic,9.99,5,31,15.05,3,0,Debit Card,0
+CUST0028,54,Martinique,Standard,19.99,16,36,62.07,4,0,PayPal,1
+CUST0029,49,Greece,Premium,9.99,20,27,4.59,8,0,Credit Card,1
+CUST0030,23,Morocco,Standard,9.99,28,24,9.38,10,1,Debit Card,1
+CUST0031,28,Thailand,Standard,19.99,19,6,77.9,1,1,Credit Card,0
+CUST0032,29,Saudi Arabia,Standard,19.99,17,4,88.16,6,0,Credit Card,0
+CUST0033,20,Madagascar,Basic,5.99,22,3,81.99,9,1,Credit Card,1
+CUST0034,62,Uruguay,Basic,14.99,26,16,20.13,6,0,PayPal,0
+CUST0035,58,Japan,Premium,14.99,14,28,19.85,1,1,PayPal,0
+CUST0036,38,Guatemala,Premium,14.99,11,30,8.59,5,0,Debit Card,0
+CUST0037,41,France,Standard,9.99,5,14,1.95,3,1,Credit Card,1
+CUST0038,70,Botswana,Basic,19.99,17,57,85.91,0,0,Credit Card,1
+CUST0039,59,French Southern Territories,Standard,9.99,5,27,69.52,9,1,PayPal,0
+CUST0040,53,Bangladesh,Basic,29.99,7,44,57.8,9,1,Debit Card,0
+CUST0041,24,Israel,Standard,29.99,8,37,15.51,5,0,Credit Card,0
+CUST0042,65,Greenland,Standard,19.99,29,24,92.23,3,0,Debit Card,0
+CUST0043,23,Saint Pierre and Miquelon,Basic,5.99,0,10,66.91,6,0,Credit Card,1
+CUST0044,69,Hungary,Basic,29.99,24,1,34.63,3,1,Debit Card,0
+CUST0045,41,Grenada,Standard,14.99,1,55,31.06,2,1,Credit Card,1
+CUST0046,30,Congo,Premium,5.99,28,12,40.01,7,0,Credit Card,0
+CUST0047,35,Guadeloupe,Standard,29.99,9,30,5.62,10,1,Credit Card,1
+CUST0048,64,Benin,Premium,19.99,1,14,21.64,7,0,Debit Card,1
+CUST0049,40,New Caledonia,Premium,5.99,9,5,75.5,1,1,Credit Card,1
+CUST0050,37,El Salvador,Basic,19.99,27,54,6.23,10,0,Credit Card,1
+CUST0051,48,Korea,Premium,9.99,21,8,82.0,2,1,Debit Card,0
+CUST0052,47,Saint Barthelemy,Premium,29.99,23,2,97.64,2,0,Credit Card,0
+CUST0053,55,India,Standard,29.99,13,22,53.66,9,0,Debit Card,0
+CUST0054,54,Uruguay,Premium,9.99,9,1,95.08,10,1,PayPal,0
+CUST0055,66,Heard Island and McDonald Islands,Standard,9.99,2,28,97.34,4,1,Debit Card,0
+CUST0056,67,Algeria,Standard,9.99,27,35,25.05,8,0,Debit Card,0
+CUST0057,39,Rwanda,Premium,5.99,4,34,66.32,2,0,Debit Card,0
+CUST0058,61,Jamaica,Premium,14.99,12,9,42.19,3,0,Credit Card,0
+CUST0059,51,Isle of Man,Premium,9.99,2,10,77.63,7,0,PayPal,0
+CUST0060,63,Ukraine,Standard,29.99,15,57,13.7,2,1,PayPal,1
+CUST0061,47,Puerto Rico,Basic,14.99,2,13,48.97,1,0,PayPal,0
+CUST0062,35,Spain,Premium,14.99,17,59,14.03,2,1,Debit Card,0
+CUST0063,65,Australia,Standard,5.99,17,36,29.37,3,1,Debit Card,0
+CUST0064,38,French Southern Territories,Basic,14.99,18,6,57.27,9,0,PayPal,0
+CUST0065,51,Chile,Basic,9.99,29,41,94.29,8,0,PayPal,0
+CUST0066,35,Romania,Standard,9.99,12,41,88.16,6,0,Debit Card,1
+CUST0067,44,Togo,Standard,14.99,17,5,83.78,9,0,PayPal,1
+CUST0068,36,Ethiopia,Premium,14.99,8,22,42.49,3,1,Credit Card,0
+CUST0069,28,Nigeria,Standard,14.99,6,54,78.27,8,1,PayPal,0
+CUST0070,19,Eritrea,Basic,19.99,2,16,71.02,5,0,Debit Card,0
+CUST0071,46,Nepal,Basic,19.99,27,4,90.29,8,0,PayPal,0
+CUST0072,54,Dominica,Premium,29.99,24,31,75.66,9,1,Credit Card,0
+CUST0073,23,France,Standard,29.99,11,36,64.31,3,1,Debit Card,1
+CUST0074,41,Romania,Premium,9.99,17,42,50.15,10,1,PayPal,0
+CUST0075,48,Wallis and Futuna,Premium,19.99,29,53,15.88,6,0,Debit Card,1
+CUST0076,42,Svalbard & Jan Mayen Islands,Premium,19.99,10,22,11.23,5,0,PayPal,0
+CUST0077,65,China,Premium,29.99,29,40,52.71,9,1,PayPal,1
+CUST0078,66,Sierra Leone,Premium,14.99,19,42,14.38,7,0,Debit Card,0
+CUST0079,51,Cote d'Ivoire,Basic,5.99,12,15,65.29,7,1,PayPal,1
+CUST0080,19,Samoa,Premium,29.99,28,36,64.77,5,0,PayPal,1
+CUST0081,29,Guyana,Standard,19.99,7,19,86.2,3,1,PayPal,1
+CUST0082,68,Serbia,Basic,9.99,15,37,21.87,5,1,Debit Card,0
+CUST0083,33,United States Minor Outlying Islands,Basic,5.99,15,18,17.53,2,1,Debit Card,0
+CUST0084,36,Nicaragua,Standard,14.99,22,8,76.89,3,1,Debit Card,0
+CUST0085,18,Myanmar,Basic,19.99,21,57,56.76,8,0,Debit Card,0
+CUST0086,68,Israel,Basic,5.99,6,53,55.1,10,0,PayPal,1
+CUST0087,63,Namibia,Standard,14.99,17,7,3.28,1,0,Credit Card,1
+CUST0088,43,Thailand,Basic,19.99,8,31,3.99,6,1,Credit Card,1
+CUST0089,45,Central African Republic,Basic,14.99,16,3,51.59,2,1,Credit Card,0
+CUST0090,63,Djibouti,Basic,5.99,25,18,42.64,5,0,Debit Card,0
+CUST0091,50,Portugal,Basic,14.99,13,56,70.81,0,1,Debit Card,0
+CUST0092,62,Chile,Premium,9.99,11,55,69.34,0,0,Debit Card,1
+CUST0093,63,Guatemala,Premium,5.99,14,19,90.93,6,1,PayPal,0
+CUST0094,32,Saint Lucia,Premium,29.99,15,21,13.27,4,0,Credit Card,0
+CUST0095,18,Cyprus,Standard,14.99,10,39,30.03,5,0,Debit Card,0
+CUST0096,42,Mongolia,Standard,9.99,29,44,94.54,2,0,Debit Card,0
+CUST0097,70,Western Sahara,Basic,29.99,16,17,98.88,8,0,Credit Card,0
+CUST0098,59,Congo,Basic,29.99,1,47,97.33,3,0,PayPal,1
+CUST0099,66,Saint Barthelemy,Premium,14.99,5,40,4.21,10,0,PayPal,1
+CUST0100,36,Somalia,Premium,29.99,6,7,26.06,6,0,PayPal,0
+CUST0101,34,El Salvador,Basic,5.99,6,6,68.84,0,1,Debit Card,1
+CUST0102,54,China,Standard,9.99,2,42,60.32,8,1,Credit Card,0
+CUST0103,37,Singapore,Basic,9.99,27,55,50.94,6,1,Credit Card,1
+CUST0104,57,Mexico,Basic,29.99,2,3,68.61,2,0,Credit Card,0
+CUST0105,48,Philippines,Standard,5.99,1,9,50.18,5,0,Debit Card,0
+CUST0106,69,Latvia,Premium,29.99,14,57,28.82,1,1,PayPal,0
+CUST0107,37,Namibia,Basic,29.99,6,14,33.52,3,0,PayPal,0
+CUST0108,32,Brunei Darussalam,Basic,5.99,2,24,13.33,9,0,PayPal,1
+CUST0109,44,Czech Republic,Standard,9.99,6,30,20.48,3,1,Credit Card,0
+CUST0110,23,Pitcairn Islands,Basic,19.99,23,3,7.08,8,1,Credit Card,1
+CUST0111,34,Wallis and Futuna,Basic,5.99,20,45,73.15,5,1,Credit Card,0
+CUST0112,38,Guatemala,Premium,29.99,12,3,92.41,10,0,Debit Card,1
+CUST0113,32,Marshall Islands,Standard,19.99,13,57,70.4,0,1,PayPal,0
+CUST0114,20,Benin,Standard,14.99,10,43,73.86,7,1,Credit Card,1
+CUST0115,22,Sweden,Premium,29.99,13,24,79.65,0,0,Debit Card,0
+CUST0116,62,Bolivia,Premium,29.99,29,27,65.43,10,0,PayPal,0
+CUST0117,46,Gabon,Standard,5.99,6,52,11.41,0,0,Debit Card,1
+CUST0118,24,Ghana,Standard,9.99,22,17,85.44,5,0,PayPal,0
+CUST0119,57,Netherlands Antilles,Standard,19.99,3,17,4.91,4,0,PayPal,0
+CUST0120,33,Fiji,Premium,5.99,20,53,72.91,5,0,Debit Card,1
