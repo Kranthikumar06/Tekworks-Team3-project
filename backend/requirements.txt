@@ -8,3 +8,4 @@ joblib
 scipy
 openpyxl
 ipykernel
+uvicorn
