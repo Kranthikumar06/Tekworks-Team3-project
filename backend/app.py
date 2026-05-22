@@ -26,6 +26,10 @@ from subscription_service import (  # noqa: E402
 	PredictRequest as SubscriptionRequest,
 	predict_subscription,
 )
+from product_demand_service import (  # noqa: E402
+	PredictRequest as ProductDemandRequest,
+	predict_product_demand,
+)
 
 
 @app.get("/")
@@ -46,3 +50,8 @@ def subscription_endpoint(request: SubscriptionRequest) -> Dict[str, Any]:
 @app.post("/predict/market")
 def market_endpoint(request: MarketResponseRequest) -> Dict[str, Any]:
 	return predict_market_response(request)
+
+
+@app.post("/predict/product-demand")
+def product_demand_endpoint(request: ProductDemandRequest) -> Dict[str, Any]:
+	return predict_product_demand(request)

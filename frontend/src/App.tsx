@@ -111,6 +111,20 @@ function App() {
           },
         ],
       },
+      {
+        id: 'product',
+        label: 'Product Demand',
+        title: 'Product Demand Forecasting',
+        description:
+          'Predict demand from sales, revenue, and seasonal indicators.',
+        fields: [
+          { name: 'Units_Sold', type: 'number', placeholder: 'e.g., 41' },
+          { name: 'Revenue', type: 'number', placeholder: 'e.g., 1350.55' },
+          { name: 'Marketing_Spend', type: 'number', placeholder: 'e.g., 8329.69' },
+          { name: 'Holiday_Indicator', type: 'number', placeholder: 'e.g., 0' },
+          { name: 'Season', type: 'select', options: ['Summer', 'Winter', 'Rainy'] },
+        ],
+      },
     ],
     [],
   )
@@ -142,19 +156,31 @@ function App() {
     try {
       const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? 'http://127.0.0.1:8000'
       const payload = formState[activeView] ?? {}
+      const seasonMap: Record<string, number> = {
+        Summer: 1,
+        Winter: 2,
+        Rainy: 3,
+      }
+
       const formattedPayload = Object.fromEntries(
-        Object.entries(payload).map(([key, value]) => [
-          key,
-          value !== '' && !Number.isNaN(Number(value)) && value.match(/^[0-9.]+$/)
-            ? Number(value)
-            : value,
-        ]),
+        Object.entries(payload).map(([key, value]) => {
+          if (activeView === 'product' && key === 'Season') {
+            return [key, seasonMap[value] ?? value]
+          }
+          return [
+            key,
+            value !== '' && !Number.isNaN(Number(value)) && value.match(/^[0-9.]+$/)
+              ? Number(value)
+              : value,
+          ]
+        }),
       )
 
       const endpointMap: Record<string, string> = {
         churn: '/predict/churn',
         subscription: '/predict/subscription',
         market: '/predict/market',
+        product: '/predict/product-demand',
       }
 
       const body =
