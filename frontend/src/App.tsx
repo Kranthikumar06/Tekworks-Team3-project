@@ -178,6 +178,27 @@ function App() {
           { name: 'Score', type: 'number', placeholder: 'e.g., 0.42' },
         ],
       },
+      {
+        id: 'customer-segmentation',
+        label: 'Customer Segmentation',
+        title: 'Customer Segmentation Prediction',
+        description:
+          'Assign a customer segment using mall customer attributes.',
+        fields: [
+          { name: 'Gender', type: 'select', options: ['Male', 'Female'] },
+          { name: 'Age', type: 'number', placeholder: 'e.g., 27' },
+          {
+            name: 'Annual Income (k$)',
+            type: 'number',
+            placeholder: 'e.g., 48',
+          },
+          {
+            name: 'Spending Score (1-100)',
+            type: 'number',
+            placeholder: 'e.g., 62',
+          },
+        ],
+      },
     ],
     [],
   )
@@ -236,6 +257,7 @@ function App() {
         product: '/predict/product-demand',
         'product-sensitivity': '/predict/product-sensitivity',
         'purchase-propensity': '/predict/purchase-propensity',
+        'customer-segmentation': '/predict/customer-segmentation',
       }
 
       const body =

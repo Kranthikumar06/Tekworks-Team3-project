@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+import numpy as np
 import pandas as pd
 import pickle
 from fastapi import HTTPException
@@ -89,8 +90,12 @@ def predict_subscription(request: PredictRequest) -> Dict[str, Any]:
 
     prediction = bundle["model"].predict(input_df)[0]
     response: Dict[str, Any]
-    if isinstance(prediction, (int, float)):
-        response = {"prediction": int(prediction)}
+    if isinstance(prediction, (int, float, np.integer, np.floating)):
+        prediction_int = int(prediction)
+        response = {
+            "prediction": "Renew" if prediction_int == 1 else "Not Renew",
+            "prediction_numeric": prediction_int,
+        }
     else:
         prediction_str = str(prediction)
         response = {"prediction": prediction_str}

@@ -38,6 +38,10 @@ from purchase_propensity_service import (  # noqa: E402
 	PredictRequest as PurchasePropensityRequest,
 	predict_purchase_propensity,
 )
+from customer_segmentation_service import (  # noqa: E402
+	PredictRequest as CustomerSegmentationRequest,
+	predict_customer_segmentation,
+)
 
 
 @app.get("/")
@@ -77,3 +81,10 @@ def purchase_propensity_endpoint(
 	request: PurchasePropensityRequest,
 ) -> Dict[str, Any]:
 	return predict_purchase_propensity(request)
+
+
+@app.post("/predict/customer-segmentation")
+def customer_segmentation_endpoint(
+	request: CustomerSegmentationRequest,
+) -> Dict[str, Any]:
+	return predict_customer_segmentation(request)
