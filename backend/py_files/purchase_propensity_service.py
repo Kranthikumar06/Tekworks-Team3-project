@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 import joblib
+import numpy as np
 import pandas as pd
 from fastapi import HTTPException
 from pydantic import BaseModel
@@ -68,9 +69,33 @@ def predict_purchase_propensity(request: PredictRequest) -> Dict[str, Any]:
     scaled_input = purchase_scaler.transform(input_df)
     prediction = purchase_model.predict(scaled_input)[0]
 
-    response: Dict[str, Any] = {"prediction": int(prediction)}
+    # normalize numpy types
+    if isinstance(prediction, (np.integer, np.floating)):
+        prediction_val = int(prediction)
+    elif isinstance(prediction, (int, float)):
+        prediction_val = int(prediction)
+    else:
+        try:
+            prediction_val = int(prediction)
+        except Exception:
+            prediction_val = None
+
+    response: Dict[str, Any]
+    if prediction_val is None:
+        # fallback to raw prediction string
+        response = {"prediction": str(prediction)}
+    else:
+        labels = {1: "Purchased", 0: "Not Purchased"}
+        response = {
+            "prediction": labels.get(prediction_val, "Unknown"),
+            "prediction_numeric": prediction_val,
+        }
+
     if hasattr(purchase_model, "predict_proba"):
-        proba = purchase_model.predict_proba(scaled_input)[0]
-        response["probability"] = float(proba[1])
+        try:
+            proba = purchase_model.predict_proba(scaled_input)[0]
+            response["probability"] = float(proba[1])
+        except Exception:
+            pass
 
     return response
