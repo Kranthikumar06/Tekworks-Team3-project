@@ -30,6 +30,10 @@ from product_demand_service import (  # noqa: E402
 	PredictRequest as ProductDemandRequest,
 	predict_product_demand,
 )
+from product_sensitivity_service import (  # noqa: E402
+	PredictRequest as ProductSensitivityRequest,
+	predict_product_sensitivity,
+)
 
 
 @app.get("/")
@@ -55,3 +59,10 @@ def market_endpoint(request: MarketResponseRequest) -> Dict[str, Any]:
 @app.post("/predict/product-demand")
 def product_demand_endpoint(request: ProductDemandRequest) -> Dict[str, Any]:
 	return predict_product_demand(request)
+
+
+@app.post("/predict/product-sensitivity")
+def product_sensitivity_endpoint(
+	request: ProductSensitivityRequest,
+) -> Dict[str, Any]:
+	return predict_product_sensitivity(request)

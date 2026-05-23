@@ -125,6 +125,37 @@ function App() {
           { name: 'Season', type: 'select', options: ['Summer', 'Winter', 'Rainy'] },
         ],
       },
+      {
+        id: 'product-sensitivity',
+        label: 'Product Sensitivity',
+        title: 'Product Sensitivity Prediction',
+        description:
+          'Estimate sensitivity using dynamic pricing indicators.',
+        fields: [
+          { name: 'Number_of_Drivers', type: 'number', placeholder: 'e.g., 45' },
+          { name: 'Number_of_Past_Rides', type: 'number', placeholder: 'e.g., 13' },
+          {
+            name: 'Expected_Ride_Duration',
+            type: 'number',
+            placeholder: 'e.g., 90',
+          },
+          {
+            name: 'Location_Category',
+            type: 'select',
+            options: ['Urban', 'Suburban', 'Rural'],
+          },
+          {
+            name: 'Customer_Loyalty_Status',
+            type: 'select',
+            options: ['Silver', 'Regular', 'Gold'],
+          },
+          {
+            name: 'Vehicle_Type',
+            type: 'select',
+            options: ['Premium', 'Economy'],
+          },
+        ],
+      },
     ],
     [],
   )
@@ -181,6 +212,7 @@ function App() {
         subscription: '/predict/subscription',
         market: '/predict/market',
         product: '/predict/product-demand',
+        'product-sensitivity': '/predict/product-sensitivity',
       }
 
       const body =
