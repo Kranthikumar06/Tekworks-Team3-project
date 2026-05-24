@@ -1,52 +1,100 @@
 :root {
-  --ink-900: #0f172a;
-  --ink-700: #334155;
-  --ink-600: #475569;
-  --ink-500: #64748b;
-  --ink-400: #94a3b8;
-  --ink-200: #e2e8f0;
-  --surface-0: #ffffff;
-  --surface-100: #f8fafc;
-  --surface-200: #f1f5f9;
+  /* Intellix Premium Color Palette */
+  --primary: #0055D4;
+  --primary-hover: #0047B3;
+  --primary-light: #E4EBFB;
+  --primary-light-hover: #D4E0F9;
+  
+  --bg-main: #F3F6FA;
+  --bg-sidebar: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  
+  --border-light: #E2E8F0;
+  --border-focus: #3B82F6;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --text-active: #0055D4;
 
-  --sans: 'IBM Plex Sans', 'Work Sans', 'Source Sans 3', sans-serif;
-  --mono: 'IBM Plex Mono', 'Source Code Pro', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
-  font: 16px/1.6 var(--sans);
-  color: var(--ink-700);
-  background: var(--surface-0);
+  font: 14px/1.5 var(--sans);
+  color: var(--text-secondary);
+  background-color: var(--bg-main);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-body {
-  margin: 0;
-  min-height: 100svh;
-  background-color: var(--surface-0);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><circle cx='1' cy='1' r='1' fill='%23e2e8f0'/></svg>");
-}
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1,
-h2,
-h3 {
+body {
+  margin: 0;
+  min-height: 100vh;
   font-family: var(--sans);
-  color: var(--ink-900);
+  background-color: var(--bg-main);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sans);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 p {
-  margin: 0;
+  color: var(--text-secondary);
 }
 
-button,
-input {
+button, input, select, textarea {
   font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Custom Scrollbar Styles for Premium Feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Base utility for hiding scrollbar when not active */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
