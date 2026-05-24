@@ -10,7 +10,7 @@
 /* Sidebar Layout */
 .intellix-sidebar {
   width: 260px;
-  background-color: var(--bg-sidebar);
+  background-color: #dcdcdc;
   border-right: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
@@ -174,7 +174,11 @@
   align-items: flex-start;
   gap: 24px;
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .header-details {
@@ -195,13 +199,13 @@
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.5px;
-  color: var(--text-primary);
+  color: #FFFFFF;
   margin-top: 2px;
 }
 
 .header-desc {
   font-size: 13.5px;
-  color: var(--text-secondary);
+  color: #E2E8F0;
   line-height: 1.5;
 }
 
@@ -481,15 +485,21 @@
   padding: 11px 36px 11px 14px;
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #1E293B;
   width: 100%;
   outline: none;
   appearance: none;
   cursor: pointer;
 }
 
+.custom-select-element option {
+  background-color: #FFFFFF;
+  color: #1E293B;
+  padding: 8px 12px;
+}
+
 .custom-select-element.empty-val {
-  color: var(--text-muted);
+  color: #94A3B8;
 }
 
 .select-chevron-indicator {
@@ -1116,7 +1126,7 @@
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
   position: relative;
   overflow: hidden;
-  margin-top: -20px;
+  margin-top: -18px;
 }
 
 .home-hero-section::before {
@@ -1169,7 +1179,7 @@
 .home-btn-primary {
   background-color: var(--primary);
   color: #FFFFFF;
-  padding: 12px 24px;
+  padding: 1px 24px;
   border-radius: 8px;
   font-size: 13.5px;
   font-weight: 700;

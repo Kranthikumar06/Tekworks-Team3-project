@@ -131,7 +131,6 @@ function App() {
   })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-  const [realTime, setRealTime] = useState(true)
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
 
@@ -716,7 +715,16 @@ function App() {
 
       if (!response.ok) {
         const errorText = await response.text()
-        throw new Error(errorText || 'Inference pipeline returned an error')
+        let errorMessage = 'Inference pipeline returned an error'
+        try {
+          const errorObj = JSON.parse(errorText)
+          // Try multiple common error field names
+          errorMessage = errorObj.detail || errorObj.message || errorObj.error || JSON.stringify(errorObj) || errorText
+        } catch {
+          // If not JSON, use the text response
+          errorMessage = errorText?.trim() || errorMessage
+        }
+        throw new Error(errorMessage)
       }
 
       const data = await response.json()
@@ -1072,7 +1080,6 @@ function App() {
           “Empowering businesses with intelligent customer analytics and predictive decision-making.”
         </p>
         <div className="footer-copyright">
-          <span>Final-Year AI/ML Capstone Presentation System</span>
           <span>© 2026 Customer Intelligence & Decision Analytics System. All rights reserved.</span>
         </div>
       </footer>
@@ -1094,7 +1101,6 @@ function App() {
       return (
         <div className="result-error-card">
           <div className="error-header">
-            <Icons.AlertCircle />
             <span>Inference Failure</span>
           </div>
           <p className="error-details">{error || 'The model was unable to parse input values. Please review parameters.'}</p>
@@ -1175,17 +1181,6 @@ function App() {
             )}
           </div>
         )}
-
-        <div className="inference-meta-block">
-          <div className="meta-row">
-            <span>Client IP Payload:</span>
-            <code>{JSON.stringify(formState[activeView] ?? {})}</code>
-          </div>
-          <div className="meta-row">
-            <span>Pipeline Latency:</span>
-            <span>0.012 sec</span>
-          </div>
-        </div>
       </div>
     )
   }
@@ -1207,7 +1202,6 @@ function App() {
         </div>
         
         <div className="sidebar-nav-container">
-          <span className="sidebar-category-header">HOME</span>
           <nav className="sidebar-nav">
             {sidebarItems.map((item) => {
               const Icon = item.icon
@@ -1243,27 +1237,25 @@ function App() {
         {/* Content Area */}
         <div className="intellix-workspace-content">
           {/* Breadcrumb and Page Header */}
+          {activeView !== 'about' && (
           <div className="content-header-row">
-            {activeView !== 'about' && (
             <div className="header-details">
               <h1>{active.title}</h1>
               <p className="header-desc">
                 {active.description}
               </p>
             </div>
-            )}
             
-            {activeView !== 'about' && (
-              <button 
-                type="button" 
-                className="export-report-btn"
-                onClick={handleExport}
-              >
-                <Icons.Export />
-                Export Report
-              </button>
-            )}
+            <button 
+              type="button" 
+              className="export-report-btn"
+              onClick={handleExport}
+            >
+              <Icons.Export />
+              Export Report
+            </button>
           </div>
+          )}
 
           {activeView === 'about' ? (
             renderAboutView()
@@ -1280,26 +1272,6 @@ function App() {
                       </svg>
                     </span>
                     <span className="model-chip-label">{active.modelName || 'MODEL: DEFAULT_V1'}</span>
-                  </div>
-
-                  <label className="realtime-inference-checkbox">
-                    <input 
-                      type="checkbox" 
-                      checked={realTime} 
-                      onChange={(e) => setRealTime(e.target.checked)} 
-                    />
-                    <span className="custom-check-box">
-                      {realTime && (
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                      )}
-                    </span>
-                    <span className="checkbox-text">Real-time Inference</span>
-                  </label>
-
-                  <div className="options-right-icons">
-                    <Icons.History />
                   </div>
                 </div>
 
@@ -1318,9 +1290,6 @@ function App() {
                         title="Reset Parameters"
                       >
                         <Icons.Reset />
-                      </button>
-                      <button type="button" className="icon-action-btn" title="Options">
-                        <Icons.Dots />
                       </button>
                     </div>
                   </div>
@@ -1412,14 +1381,6 @@ function App() {
                         RUN PREDICTION
                       </>
                     )}
-                  </button>
-
-                  <button
-                    type="button"
-                    className="reset-vectors-btn"
-                    onClick={handleClear}
-                  >
-                    RESET VECTORS
                   </button>
                 </div>
 
